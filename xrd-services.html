@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AXION Global — Raw Material Analysis &amp; Quality Control</title>
+<meta name="description" content="AXION Global provides XRD, FTIR and PSD analysis for raw material characterization and quality control across research and industrial applications." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src_style.css">
+<link rel="stylesheet" href="service-pages.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body class="service-page service-page--xrd">
+
+<!-- ================= SVG ICON SPRITE ================= -->
+<svg style="display:none">
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="icon-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7Z"/></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.98.58 3.82 1.59 5.37L2 22l4.76-1.55A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.12c-1.7 0-3.29-.49-4.63-1.33l-.33-.2-3.13 1.02 1.03-3.04-.22-.34A8.11 8.11 0 0 1 3.88 12c0-4.48 3.64-8.12 8.12-8.12S20.12 7.52 20.12 12 16.48 20.12 12 20.12z"/></symbol>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+
+    <a href="index.html#home" class="nav__brand" aria-label="AXION Global home">
+      <span class="nav__wordmark">AXION <em>GLOBAL</em></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#home" class="nav__link">Home</a>
+      <a href="index.html#about" class="nav__link">About</a>
+      <a href="xrd-services.html" class="nav__link" aria-current="page">Raw Material Analysis and Quality Control</a>
+      <a href="construction-interiors.html" class="nav__link">Construction</a>
+      <a href="index.html#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <button class="btn btn--gold btn--sm nav__cta" data-open-modal data-service="">
+      Get a Proposal
+    </button>
+
+    <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="icon"><use href="#icon-menu"/></svg>
+    </button>
+
+  </div>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="index.html#home" class="nav__mobile-link">Home</a>
+    <a href="index.html#about" class="nav__mobile-link">About</a>
+    <a href="xrd-services.html" class="nav__mobile-link" aria-current="page">Raw Material Analysis and Quality Control</a>
+    <a href="construction-interiors.html" class="nav__mobile-link">Construction</a>
+    <a href="index.html#contact" class="nav__mobile-link">Contact</a>
+
+    <button class="btn btn--gold nav__mobile-cta" data-open-modal data-service="">
+      Get a Proposal
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="service-hero">
+
+  <div class="service-hero__media">
+    <img src="https://images.pexels.com/photos/1146627/pexels-photo-1146627.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000" alt="Laboratory analysis instrumentation" />
+  </div>
+
+  <div class="service-hero__veil"></div>
+
+  <div class="container service-hero__inner">
+    <div class="service-hero__copy reveal" data-reveal>
+
+      <div class="eyebrow eyebrow--light">
+        <span class="eyebrow__line"></span>Scientific Analysis &amp; Characterization
+      </div>
+
+      <h1>Raw Material Analysis <span>&amp; Quality Control</span></h1>
+
+      <p class="service-hero__tagline">Understanding Materials. Confirming Quality.</p>
+
+      <p>XRD, FTIR and PSD analysis for the identification, characterization and quality verification of raw materials — supporting research, industrial production and material sourcing decisions.</p>
+
+      <div class="service-hero__actions">
+        <button class="btn btn--gold" data-open-modal data-service="XRD Services" data-bg="lab">
+          Submit a Sample Requirement <svg class="icon"><use href="#icon-arrow-right"/></svg>
+        </button>
+        <a class="btn btn--ghost" href="#solutions">Explore Capabilities</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="section service-intro">
+  <div class="container service-intro__grid">
+
+    <div class="reveal" data-reveal>
+      <div class="eyebrow"><span class="eyebrow__line"></span>Analytical Capability</div>
+      <h2 class="h2">Know exactly what your material is made of.</h2>
+    </div>
+
+    <div class="reveal" data-reveal style="--delay:100ms">
+      <p class="p">Raw materials rarely behave the way a datasheet suggests. Crystalline phase, chemical composition and particle size all shape how a material performs in production — and each of them can shift between suppliers, deposits and batches.</p>
+      <p class="p">AXION Global brings XRD, FTIR and PSD analysis together so that identification, composition and physical profiling can be read as one picture rather than three disconnected results.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SOLUTIONS ================= -->
+<section class="section section--navy" id="solutions">
+  <div class="container">
+
+    <div class="section-head reveal" data-reveal>
+      <div class="eyebrow eyebrow--light eyebrow--center">
+        <span class="eyebrow__line"></span>Our Services<span class="eyebrow__line"></span>
+      </div>
+      <h2 class="h2 h2--light">Analysis, characterization<br><span class="text-gold">&amp; quality verification.</span></h2>
+    </div>
+
+    <div class="solution-grid">
+
+      <article class="solution-panel reveal" data-reveal>
+        <span>01</span>
+        <h3>X-Ray Diffraction (XRD)</h3>
+        <p>Identification of crystalline phases and mineral content, giving a clear picture of what a material actually contains.</p>
+      </article>
+
+      <article class="solution-panel reveal" data-reveal style="--delay:60ms">
+        <span>02</span>
+        <h3>Quantitative Phase Analysis</h3>
+        <p>Relative proportions of the identified phases, so major constituents and secondary content can be separated with confidence.</p>
+      </article>
+
+      <article class="solution-panel reveal" data-reveal style="--delay:120ms">
+        <span>03</span>
+        <h3>FTIR Spectroscopy</h3>
+        <p>Infrared analysis for functional groups and chemical structure — useful where composition matters as much as mineralogy.</p>
+      </article>
+
+      <article class="solution-panel reveal" data-reveal style="--delay:180ms">
+        <span>04</span>
+        <h3>Particle Size Distribution</h3>
+        <p>PSD profiling to characterize fineness and size spread, key to handling, reactivity and downstream processing behaviour.</p>
+      </article>
+
+      <article class="solution-panel reveal" data-reveal style="--delay:240ms">
+        <span>05</span>
+        <h3>Raw Material Quality Control</h3>
+        <p>Verification of incoming materials and batch-to-batch consistency checks to support sourcing and production decisions.</p>
+      </article>
+
+      <article class="solution-panel reveal" data-reveal style="--delay:300ms">
+        <span>06</span>
+        <h3>Reporting &amp; Consultation</h3>
+        <p>Interpretation of results and custom reporting structured around your application, specification or approval requirement.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPLIT FEATURE ================= -->
+<section class="section">
+  <div class="container">
+    <div class="split-feature">
+
+      <div class="split-feature__media reveal" data-reveal>
+        <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Sample preparation and laboratory testing" />
+      </div>
+
+      <div class="split-feature__copy reveal" data-reveal style="--delay:120ms">
+        <div class="eyebrow"><span class="eyebrow__line"></span>Results You Can Act On</div>
+        <h2 class="h2">Data interpreted, not just measured.</h2>
+        <p class="p">A diffractogram or spectrum on its own rarely answers a commercial question. We report results alongside the interpretation that matters to your application — what the material is, how consistent it is, and what that means for the decision in front of you.</p>
+
+        <ul class="check-list">
+          <li><svg class="icon"><use href="#icon-check"/></svg>Mineral identification &amp; characterization</li>
+          <li><svg class="icon"><use href="#icon-check"/></svg>Phase &amp; quantitative analysis</li>
+          <li><svg class="icon"><use href="#icon-check"/></svg>Chemical &amp; functional group analysis</li>
+          <li><svg class="icon"><use href="#icon-check"/></svg>Particle size profiling</li>
+          <li><svg class="icon"><use href="#icon-check"/></svg>Batch-to-batch consistency checks</li>
+          <li><svg class="icon"><use href="#icon-check"/></svg>Custom reporting &amp; consultation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPLICATIONS ================= -->
+<section class="section section--parchment">
+  <div class="container">
+
+    <div class="section-head reveal" data-reveal>
+      <div class="eyebrow eyebrow--center">
+        <span class="eyebrow__line"></span>How It Works<span class="eyebrow__line"></span>
+      </div>
+      <h2 class="h2">From sample to a decision you can defend.</h2>
+    </div>
+
+    <div class="process-row">
+      <div class="reveal" data-reveal><span>01</span><h3>Define</h3><p>Clarify the material, the question being asked and the analysis that answers it.</p></div>
+      <div class="reveal" data-reveal style="--delay:80ms"><span>02</span><h3>Prepare</h3><p>Handle and prepare the sample appropriately for the selected technique.</p></div>
+      <div class="reveal" data-reveal style="--delay:160ms"><span>03</span><h3>Analyze</h3><p>Run XRD, FTIR or PSD analysis as the requirement dictates.</p></div>
+      <div class="reveal" data-reveal style="--delay:240ms"><span>04</span><h3>Report</h3><p>Deliver results with interpretation and consultation where needed.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section service-cta">
+  <div class="container service-cta__inner reveal" data-reveal>
+
+    <div>
+      <div class="eyebrow eyebrow--light"><span class="eyebrow__line"></span>Start With Your Sample</div>
+      <h2 class="h2 h2--light">Tell us what you need to know.</h2>
+      <p>Share the material, the application and the question you are trying to answer — our team will advise on the right analysis and scope of reporting.</p>
+    </div>
+
+    <button class="btn btn--gold" data-open-modal data-service="XRD Services" data-bg="lab">
+      Submit Your Requirement <svg class="icon"><use href="#icon-arrow-right"/></svg>
+    </button>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+
+  <div class="site-footer__glow site-footer__glow--one"></div>
+  <div class="site-footer__glow site-footer__glow--two"></div>
+
+  <div class="container">
+
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+
+        <a href="index.html#home" class="footer-logo">
+          AXION <span>GLOBAL</span>
+        </a>
+
+        <p class="footer-tagline">
+          Global Supply &amp; Solutions
+        </p>
+
+        <p class="footer-description">
+          Reliable procurement, specialized XRD analysis,
+          construction materials and complete interior
+          solutions delivered with precision and trust.
+        </p>
+
+        <div class="footer-accent-line"></div>
+
+      </div>
+
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Products &amp; Services</a></li>
+          <li><a href="xrd-services.html">Raw Material Analysis and Quality Control</a></li>
+          <li><a href="construction-interiors.html">Construction &amp; Interiors</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Contact -->
+      <div class="footer-column footer-contact">
+
+        <h4>Contact Us</h4>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">⌖</span>
+          <p>
+            Plot #4, Street 2 Adjacent to<br>
+            Shahi Qila Marriage Hall,<br>
+            Tehsil Taxila, District Rawalpindi
+          </p>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">☎</span>
+          <a href="tel:+923215797119">
+            +92 321 5797119
+          </a>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉</span>
+          <a href="mailto:Info.axionglobalpk@gmail.com">
+            Info.axionglobalpk@gmail.com
+          </a>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">◎</span>
+          <a href="https://www.axionglobal-pk.com" target="_blank" rel="noopener">
+            www.axionglobal-pk.com
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-divider"></div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 AXION GLOBAL. All rights reserved.
+      </p>
+
+      <div class="footer-bottom__links">
+        <a href="#">Privacy Policy</a>
+        <span>•</span>
+        <a href="#">Terms &amp; Conditions</a>
+        <span>•</span>
+        <a href="admin/login.php" rel="nofollow">Admin</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+<a class="wa-float" href="https://wa.me/923215797119?text=Welcome%20to%20AXION%20Global%20Supply%20and%20Procurement%20Solutions.%20How%20may%20our%20team%20assist%20you%3F" target="_blank" rel="noreferrer" aria-label="Chat with AXION Global on WhatsApp">
+  <span class="wa-float__tooltip">Chat with us on WhatsApp</span>
+  <span class="wa-float__ring"></span>
+  <span class="wa-float__pulse"></span>
+  <svg class="icon"><use href="#icon-whatsapp"/></svg>
+</a>
+
+<!-- ================= INQUIRY MODAL ================= -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+    <div class="modal__bg">
+      <img id="modalBgImg" src="" alt="" />
+      <div class="modal__bg-scrim"></div>
+    </div>
+
+    <div class="modal__glass">
+
+      <div class="modal__head">
+        <div>
+          <div class="modal__tag" id="modalTag">General Inquiry</div>
+          <h3 class="modal__title" id="modalTitle">Submit Your Query</h3>
+        </div>
+        <button class="modal__close" data-close-modal aria-label="Close">
+          <svg class="icon"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+
+      <form class="modal__form" id="inquiryForm">
+        <div class="form-grid">
+
+          <input type="hidden" name="service" id="modalServiceField" />
+
+          <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label>Do not fill this in
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Full Name<span class="req">*</span></span>
+            <input type="text" name="name" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Company / Organization</span>
+            <input type="text" name="company" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Email Address<span class="req">*</span></span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Phone / WhatsApp<span class="req">*</span></span>
+            <input type="text" name="phone" required />
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label">Your Requirement<span class="req">*</span></span>
+            <textarea name="message" rows="3" required></textarea>
+          </label>
+
+        </div>
+
+        <p class="form-error" id="formError" hidden>
+          Please fill in all required fields before submitting.
+        </p>
+
+        <button type="submit" class="btn btn--gold-solid btn--full">
+          Send Inquiry
+          <svg class="icon"><use href="#icon-send"/></svg>
+        </button>
+
+        <p class="form-note">
+          Your information will be used only to respond to your inquiry.
+        </p>
+      </form>
+
+      <div class="modal__success" id="modalSuccess" hidden>
+        <div class="modal__success-icon"><svg class="icon icon--lg"><use href="#icon-check"/></svg></div>
+        <h4>Thank you for contacting AXION Global.</h4>
+        <p>Your inquiry has been received. Our team will review your requirement and get back to you shortly.</p>
+        <a class="btn btn--white" href="https://wa.me/923215797119" target="_blank" rel="noreferrer">
+          <svg class="icon"><use href="#icon-whatsapp"/></svg> Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

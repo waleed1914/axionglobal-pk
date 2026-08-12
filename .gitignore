@@ -1,0 +1,4 @@
+includes/config.php
+storage/*.sqlite
+storage/*.sqlite-wal
+storage/*.sqlite-shm

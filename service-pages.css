@@ -1,0 +1,446 @@
+/* =========================================================
+   AXION GLOBAL — SERVICE PAGES
+   Supplementary stylesheet for:
+     • xrd-services.html
+     • construction-interiors.html
+
+   Loaded AFTER src_style.css. Every rule here is additive —
+   nothing in the shared stylesheet is overridden, and all
+   colour, radius, shadow and easing values reuse the tokens
+   already defined in :root.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Shared modifiers the service pages need
+   --------------------------------------------------------- */
+
+/* The [hidden] attribute hides via the UA stylesheet's display:none,
+   which src_style.css overrides by setting display:flex on both of
+   these. Without this, the success panel is never hidden (it just sits
+   at opacity:0 padding out the modal) and the form stays on screen
+   after submit. Specificity here beats the single-class rule, so no
+   !important is needed. */
+.modal__form[hidden],
+.modal__success[hidden] { display: none; }
+
+/* Light eyebrow — for use on navy / photographic backgrounds */
+.eyebrow--light { color: var(--gold-light); }
+.eyebrow--light .eyebrow__line { background: var(--gold-light); }
+
+/* Ghost button — outlined, for dark backgrounds */
+.btn--ghost {
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.btn--ghost:hover { background: var(--white); color: var(--navy); }
+
+
+/* =========================================================
+   1. SERVICE HERO
+   ========================================================= */
+
+.service-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 78vh;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.service-hero__media { position: absolute; inset: 0; }
+
+.service-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.07);
+  animation: heroZoom 22s ease-out forwards; /* keyframes live in src_style.css */
+}
+
+.service-hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8,16,32,.92) 0%, rgba(8,16,32,.62) 52%, rgba(8,16,32,.5) 100%),
+    linear-gradient(180deg, rgba(8,16,32,.7) 0%, rgba(8,16,32,.32) 38%, rgba(8,16,32,.9) 100%);
+}
+
+.service-hero__veil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 170px rgba(0,0,0,.5);
+}
+
+.service-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 168px;
+  padding-bottom: 104px;
+}
+
+.service-hero__copy { max-width: 720px; }
+
+.service-hero__copy h1 {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  color: var(--white);
+  font-size: clamp(34px, 5.6vw, 62px);
+  line-height: 1.07;
+  letter-spacing: -.015em;
+}
+
+.service-hero__copy h1 span {
+  display: block;
+  color: var(--gold-light);
+}
+
+.service-hero__tagline {
+  margin-top: 20px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(17px, 2vw, 21px);
+  color: var(--gold-light);
+  letter-spacing: .01em;
+}
+
+.service-hero__copy > p:not(.service-hero__tagline) {
+  margin-top: 20px;
+  max-width: 56ch;
+  font-size: clamp(15px, 1.5vw, 16.5px);
+  line-height: 1.75;
+  color: rgba(255,255,255,.72);
+}
+
+.service-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 38px;
+}
+
+
+/* =========================================================
+   2. INTRO — two-column statement
+   ========================================================= */
+
+.service-intro__grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.service-intro__grid .p:first-child { margin-top: 0; }
+.service-intro__grid .p { max-width: 54ch; }
+
+
+/* =========================================================
+   3. SOLUTION GRID — numbered glass panels on navy
+   ========================================================= */
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.solution-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 30px 34px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,.1);
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.075) 0%, rgba(255,255,255,.02) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+  transition:
+    transform .35s var(--ease),
+    border-color .35s ease,
+    background .35s ease;
+}
+
+.solution-panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 30px; right: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s var(--ease);
+}
+
+.solution-panel:hover {
+  transform: translateY(-6px);
+  border-color: rgba(199,154,61,.4);
+  background: linear-gradient(160deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.03) 100%);
+}
+.solution-panel:hover::before { transform: scaleX(1); }
+
+.solution-panel > span {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--gold);
+}
+
+.solution-panel h3 {
+  margin: 15px 0 11px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--white);
+}
+
+.solution-panel p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.64);
+}
+
+
+/* =========================================================
+   4. SPLIT FEATURE — image + capability checklist
+   ========================================================= */
+
+.split-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.02fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.split-feature__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3.4;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.split-feature__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--ease);
+}
+
+.split-feature__media:hover img { transform: scale(1.05); }
+
+.split-feature__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, transparent 58%, rgba(11,27,51,.5) 100%);
+}
+
+.split-feature__copy { min-width: 0; }
+
+.check-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px 22px;
+  margin-top: 30px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--navy);
+}
+
+.check-list .icon {
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   5. PROCESS ROW — four numbered steps
+   ========================================================= */
+
+.process-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.process-row > div {
+  position: relative;
+  padding-top: 26px;
+  border-top: 2px solid rgba(11,27,51,.1);
+  transition: border-color .35s ease;
+}
+
+.process-row > div::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: 0;
+  width: 44px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.process-row > div:hover { border-top-color: rgba(199,154,61,.3); }
+
+.process-row span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  color: var(--gold);
+}
+
+.process-row h3 {
+  margin: 9px 0 9px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--navy);
+}
+
+.process-row p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--slate);
+}
+
+
+/* =========================================================
+   6. CLOSING CTA BAND
+   ========================================================= */
+
+.service-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+}
+
+.service-cta::before {
+  content: "";
+  position: absolute;
+  top: -140px; right: -110px;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(199,154,61,.22) 0%, transparent 70%);
+}
+
+.service-cta__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.service-cta__inner > div { max-width: 620px; }
+
+.service-cta__inner p {
+  margin-top: 18px;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.65);
+}
+
+.service-cta__inner .btn { flex-shrink: 0; }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .solution-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .split-feature {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .split-feature__media { aspect-ratio: 16 / 10; }
+
+  .service-intro__grid { gap: 44px; }
+
+  .process-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px 26px;
+  }
+}
+
+
+@media (max-width: 860px) {
+
+  .service-hero { min-height: 0; }
+
+  .service-hero__inner {
+    padding-top: 132px;
+    padding-bottom: 84px;
+  }
+
+  .service-hero__veil {
+    background:
+      linear-gradient(180deg, rgba(8,16,32,.72) 0%, rgba(8,16,32,.55) 40%, rgba(8,16,32,.93) 100%);
+  }
+
+  .service-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .solution-panel { padding: 30px 26px; }
+
+  .service-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  .service-hero__inner {
+    padding-top: 118px;
+    padding-bottom: 72px;
+  }
+
+  .service-hero__actions { flex-direction: column; align-items: stretch; }
+  .service-hero__actions .btn { width: 100%; justify-content: center; }
+
+  .solution-grid { grid-template-columns: 1fr; gap: 18px; }
+
+  .check-list { grid-template-columns: 1fr; gap: 12px; }
+
+  .process-row { grid-template-columns: 1fr; gap: 30px; }
+
+  .service-cta__inner .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ---------- Touch devices: show the "hovered" state ---------- */
+@media (hover: none) {
+
+  .solution-panel::before { transform: scaleX(1); }
+  .solution-panel { border-color: rgba(199,154,61,.28); }
+}

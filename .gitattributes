@@ -1,0 +1,9 @@
+# Normalise to LF in the repository. Windows keeps CRLF locally,
+# the Linux server checks out LF.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.sqlite binary

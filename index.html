@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AXION Global — Global Supply &amp; Procurement Solutions</title>
+<meta name="description" content="AXION Global delivers reliable procurement, supply and specialized services to government, healthcare, education and corporate clients." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src_style.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+<!-- ================= SVG ICON SPRITE ================= -->
+<svg style="display:none">
+  <symbol id="icon-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M2 20h20"/><path d="M9 20l1-4h4l1 4"/></symbol>
+  <symbol id="icon-sofa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 11h20v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5Z"/><path d="M4 18v2M20 18v2"/></symbol>
+  <symbol id="icon-stethoscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M6 3H4M14 3h2"/><path d="M18 12v2a6 6 0 0 1-12 0v-2"/><circle cx="19" cy="12" r="2"/></symbol>
+  <symbol id="icon-tube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6M10 2v14a2 2 0 0 0 4 0V2"/><path d="M10 10h4"/></symbol>
+  <symbol id="icon-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m21 8-9-5-9 5 9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+  <symbol id="icon-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h8a3 3 0 1 1-3 3"/></symbol>
+  <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></symbol>
+  <symbol id="icon-hardhat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 7v4"/><path d="M8 8a4 4 0 0 1 8 0"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/><path d="M10 21v-4h4v4"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="icon-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7Z"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.98.58 3.82 1.59 5.37L2 22l4.76-1.55A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.12c-1.7 0-3.29-.49-4.63-1.33l-.33-.2-3.13 1.02 1.03-3.04-.22-.34A8.11 8.11 0 0 1 3.88 12c0-4.48 3.64-8.12 8.12-8.12S20.12 7.52 20.12 12 16.48 20.12 12 20.12z"/></symbol>
+  <symbol id="icon-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L4.5 19a1.8 1.8 0 0 0 1.5 2.8h12a1.8 1.8 0 0 0 1.5-2.8L14 9.5V3"/><path d="M7.5 15h9"/></symbol>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+
+    <a href="#home" class="nav__brand" aria-label="AXION Global home">
+      <span class="nav__wordmark">AXION <em>GLOBAL</em></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#home" class="nav__link">Home</a>
+      <a href="index.html#about" class="nav__link">About</a>
+      <a href="xrd-services.html" class="nav__link">Raw Material Analysis and Quality Control</a>
+      <a href="construction-interiors.html" class="nav__link">Construction</a>
+      <a href="index.html#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <button class="btn btn--gold btn--sm nav__cta" data-open-modal data-service="">
+      Get a Proposal
+    </button>
+
+    <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="icon"><use href="#icon-menu"/></svg>
+    </button>
+
+  </div>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="index.html#home" class="nav__mobile-link">Home</a>
+    <a href="index.html#about" class="nav__mobile-link">About</a>
+    <a href="xrd-services.html" class="nav__mobile-link">Raw Material Analysis and Quality Control</a>
+    <a href="construction-interiors.html" class="nav__mobile-link">Construction</a>
+    <a href="index.html#contact" class="nav__mobile-link">Contact</a>
+
+    <button class="btn btn--gold nav__mobile-cta" data-open-modal data-service="">
+      Get a Proposal
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero__bg">
+    <img src="https://images.pexels.com/photos/34118729/pexels-photo-34118729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="" class="hero__img" />
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="hero__vignette"></div>
+
+  <div class="hero__content container">
+    <div class="badge-glass reveal" data-reveal>
+      <span class="badge-glass__dot"></span>
+      Procurement &amp; Supply Excellence
+    </div>
+
+    <h1 class="hero__title">
+      <span class="reveal-line" data-reveal><span>Delivering Excellence,</span></span>
+      <span class="reveal-line" data-reveal style="--delay:120ms"><span class="text-gold">Building Trust.</span></span>
+    </h1>
+
+    <span class="gold-rule reveal" data-reveal style="--delay:220ms"></span>
+
+    <p class="hero__lead reveal" data-reveal style="--delay:280ms">
+      Reliable, cost-effective and high-quality procurement and supply solutions, delivered across local and international markets.
+    </p>
+
+    <div class="hero__actions reveal" data-reveal style="--delay:380ms">
+      <a class="btn btn--whatsapp btn--lg" href="https://wa.me/923215797119?text=Welcome%20to%20AXION%20Global%20Supply%20and%20Procurement%20Solutions.%20How%20may%20our%20team%20assist%20you%3F" target="_blank" rel="noreferrer">
+        <svg class="icon"><use href="#icon-whatsapp"/></svg> Chat With Us
+      </a>
+      <button class="btn btn--glass btn--lg" data-open-modal data-service="">
+        Submit Your Query <svg class="icon"><use href="#icon-arrow-right"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scroll cue intentionally disabled
+  <button class="hero__scroll-cue" data-scroll-to="#about" aria-label="Scroll to About section">
+    <span></span>
+  </button>
+  -->
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container grid-2">
+    <div class="reveal" data-reveal>
+      <div class="eyebrow"><span class="eyebrow__line"></span>Who We Are</div>
+      <h2 class="h2">A Partner You Can Rely On</h2>
+      <p class="p">AXION Global is a dynamic procurement and supply company delivering high-quality products and reliable services across government departments, healthcare institutions, educational institutes, NGOs and corporate clients, locally and internationally.</p>
+      <p class="p">We bridge the gap between world-class suppliers and organizations that demand nothing less than excellence, operating with integrity, precision and unwavering commitment to our clients.</p>
+      <a class="link-cta" href="#services">View Our Services <svg class="icon icon--sm"><use href="#icon-arrow-right"/></svg></a>
+    </div>
+
+    <div class="grid-2-inner">
+      <div class="panel panel--dark reveal" data-reveal>
+        <div class="panel__label">Our Mission</div>
+        <p class="panel__text panel__text--light">Reliable, cost-effective, high-quality procurement — delivered with professionalism, integrity and customer satisfaction.</p>
+      </div>
+      <div class="panel panel--light reveal" data-reveal style="--delay:120ms">
+        <div class="panel__label">Our Vision</div>
+        <p class="panel__text">To become a leading cost-efficient supply company recognized for excellence, innovation and reliability across global markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPECIALIZED — XRD + Construction ================= -->
+<section class="section section--navy" id="xrd">
+  <div class="container">
+    <div class="reveal" data-reveal>
+      <div class="eyebrow"><span class="eyebrow__line"></span>Specialized Solutions</div>
+      <h2 class="h2 h2--light">Deep Expertise.</h2>
+    </div>
+
+    <div class="grid-specialized">
+      <div class="spec-card reveal tilt" data-reveal data-tilt>
+        <img src="https://images.pexels.com/photos/1146627/pexels-photo-1146627.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Laboratory analysis equipment" class="spec-card__img" />
+        <div class="spec-card__scrim"></div>
+        <div class="spec-card__content">
+          <div class="spec-card__tag">Scientific Analysis</div>
+          <h3 class="spec-card__title">XRD, FTIR &amp; PSD Services</h3>
+          <p class="spec-card__text">Precise mineralogical analysis powered by X-Ray Diffraction technology — phase analysis, quantitative analysis and quality-control reporting for research, industrial and regulatory applications.</p>
+          <ul class="spec-card__list">
+            <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Mineral identification &amp; characterization</li>
+            <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Phase &amp; quantitative analysis</li>
+            <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Custom reporting &amp; consultation</li>
+          </ul>
+          <a class="btn btn--gold" href="xrd-services.html">
+            Raw Material Analysis and Quality Control
+            <svg class="icon"><use href="#icon-arrow-right"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="spec-card reveal tilt" data-reveal data-tilt style="--delay:120ms">
+        <img src="https://images.pexels.com/photos/14169558/pexels-photo-14169558.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Construction site" class="spec-card__img" />
+        <div class="spec-card__scrim"></div>
+        <div class="spec-card__content">
+          <div class="spec-card__tag">Built Environments</div>
+          <h3 class="spec-card__title">Construction &amp; Interiors</h3>
+          <p class="spec-card__text">End-to-end construction material supply and turnkey interior solutions — from structural essentials to premium interior fitouts, on time and on budget.</p>
+          <ul class="spec-card__list">
+            <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Cement, steel &amp; raw material supply</li>
+            <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Interior design &amp; fitout execution</li>
+            <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Turnkey project management</li>
+          </ul>
+          <a class="btn btn--gold" href="construction-interiors.html">
+            Explore Construction &amp; Interiors
+            <svg class="icon"><use href="#icon-arrow-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS & SERVICES ================= -->
+<section class="section section--parchment" id="services">
+  <div class="container">
+    <div class="section-head reveal" data-reveal>
+      <div class="eyebrow eyebrow--center"><span class="eyebrow__line"></span>Our Portfolio<span class="eyebrow__line"></span></div>
+      <h2 class="h2">Products &amp; Services</h2>
+      <p class="p p--center">From consumables to capital equipment - we source, verify and deliver with precision across every category.</p>
+    </div>
+
+    <div class="grid-cards">
+      <article class="pcard reveal" data-reveal>
+        <img class="pcard__img" src="https://images.pexels.com/photos/7789615/pexels-photo-7789615.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" />
+        <div class="pcard__scrim"></div>
+        <div class="pcard__body">
+          <div class="pcard__icon"><svg class="icon"><use href="#icon-stethoscope"/></svg></div>
+          <h4 class="pcard__title">Medical Equipment</h4>
+          <p class="pcard__text">Certified diagnostic, surgical and patient-care equipment sourced from accredited manufacturers.</p>
+          <button class="pcard__link" data-open-modal data-service="Medical Equipment" data-bg="lab">Request this <svg class="icon icon--sm"><use href="#icon-chevron-right"/></svg></button>
+        </div>
+      </article>
+
+      <article class="pcard reveal" data-reveal style="--delay:80ms">
+        <img class="pcard__img" src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" />
+        <div class="pcard__scrim"></div>
+        <div class="pcard__body">
+          <div class="pcard__icon"><svg class="icon"><use href="#icon-tube"/></svg></div>
+          <h4 class="pcard__title">Rapid Test Kits</h4>
+          <p class="pcard__text">Fast, reliable diagnostic testing solutions for a wide range of infections and health conditions.</p>
+          <button class="pcard__link" data-open-modal data-service="Rapid Test Kits" data-bg="lab">Request this <svg class="icon icon--sm"><use href="#icon-chevron-right"/></svg></button>
+        </div>
+      </article>
+
+      <article class="pcard reveal" data-reveal style="--delay:160ms">
+        <img class="pcard__img" src="https://images.pexels.com/photos/6368842/pexels-photo-6368842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" />
+        <div class="pcard__scrim"></div>
+        <div class="pcard__body">
+          <div class="pcard__icon"><svg class="icon"><use href="#icon-package"/></svg></div>
+          <h4 class="pcard__title">General Items</h4>
+          <p class="pcard__text">A comprehensive range of office consumables, stationery and facility management supplies.</p>
+          <button class="pcard__link" data-open-modal data-service="General Items" data-bg="hero">Request this <svg class="icon icon--sm"><use href="#icon-chevron-right"/></svg></button>
+        </div>
+      </article>
+
+      <article class="pcard reveal" data-reveal>
+        <img class="pcard__img" src="https://images.pexels.com/photos/28726413/pexels-photo-28726413.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" />
+        <div class="pcard__scrim"></div>
+        <div class="pcard__body">
+          <div class="pcard__icon"><svg class="icon"><use href="#icon-wind"/></svg></div>
+          <h4 class="pcard__title">Branded ACs</h4>
+          <p class="pcard__text">Energy-efficient inverter air conditioning units from globally recognized brands.</p>
+          <button class="pcard__link" data-open-modal data-service="Branded ACs" data-bg="it">Request this <svg class="icon icon--sm"><use href="#icon-chevron-right"/></svg></button>
+        </div>
+      </article>
+
+      <article class="pcard reveal" data-reveal style="--delay:80ms">
+        <img class="pcard__img" src="https://images.pexels.com/photos/37730212/pexels-photo-37730212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" />
+        <div class="pcard__scrim"></div>
+        <div class="pcard__body">
+          <div class="pcard__icon"><svg class="icon"><use href="#icon-zap"/></svg></div>
+          <h4 class="pcard__title">Electrical Equipment</h4>
+          <p class="pcard__text">Electrical fixtures, power backup solutions and consumer electronics for every facility.</p>
+          <button class="pcard__link" data-open-modal data-service="Electrical Equipment" data-bg="it">Request this <svg class="icon icon--sm"><use href="#icon-chevron-right"/></svg></button>
+        </div>
+      </article>
+
+      <article class="pcard reveal" data-reveal style="--delay:160ms">
+        <img class="pcard__img" src="https://images.pexels.com/photos/14169558/pexels-photo-14169558.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" />
+        <div class="pcard__scrim"></div>
+        <div class="pcard__body">
+          <div class="pcard__icon"><svg class="icon"><use href="#icon-hardhat"/></svg></div>
+          <h4 class="pcard__title">Construction Materials</h4>
+          <p class="pcard__text">Cement, steel and raw material supply for projects of every scale, delivered on schedule.</p>
+          <button class="pcard__link" data-open-modal data-service="Construction Materials" data-bg="construction">Request this <svg class="icon icon--sm"><use href="#icon-chevron-right"/></svg></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES ================= -->
+<section class="section section--parchment">
+  <div class="container">
+    <div class="section-head reveal" data-reveal>
+      <div class="eyebrow eyebrow--center"><span class="eyebrow__line"></span>Sectors We Serve<span class="eyebrow__line"></span></div>
+      <h2 class="h2">Industries We Serve</h2>
+    </div>
+    <div class="grid-sectors">
+      <div class="sector reveal" data-reveal><svg class="icon icon--lg"><use href="#icon-building"/></svg><span>Government Departments</span></div>
+      <div class="sector reveal" data-reveal style="--delay:60ms"><svg class="icon icon--lg"><use href="#icon-stethoscope"/></svg><span>Healthcare Institutions</span></div>
+      <div class="sector reveal" data-reveal style="--delay:120ms"><svg class="icon icon--lg"><use href="#icon-package"/></svg><span>Educational Institutes</span></div>
+      <div class="sector reveal" data-reveal style="--delay:180ms"><svg class="icon icon--lg"><use href="#icon-laptop"/></svg><span>Corporate Organizations</span></div>
+      <div class="sector reveal" data-reveal style="--delay:240ms"><svg class="icon icon--lg"><use href="#icon-sofa"/></svg><span>NGOs &amp; Foundations</span></div>
+      <div class="sector reveal" data-reveal style="--delay:300ms"><svg class="icon icon--lg"><use href="#icon-hardhat"/></svg><span>Private Sector Enterprises</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE ================= -->
+<section class="section">
+  <div class="container grid-2">
+    <div class="reveal" data-reveal>
+      <div class="eyebrow"><span class="eyebrow__line"></span>Our Advantage</div>
+      <h2 class="h2">Why Choose AXION Global?</h2>
+      <p class="p">We are not just a supplier — we are a strategic procurement partner committed to your organization's operational excellence.</p>
+      <button class="btn btn--gold" data-open-modal data-service="">Get a Proposal <svg class="icon"><use href="#icon-arrow-right"/></svg></button>
+    </div>
+
+    <ul class="why-list">
+      <li class="why-item reveal" data-reveal>
+        <span class="why-item__check"><svg class="icon icon--sm"><use href="#icon-check"/></svg></span>
+        <div>
+          <span class="why-item__num">01</span>
+          <h4 class="why-item__title">Premium Quality Products</h4>
+          <p class="why-item__text">Every item we supply is verified against international quality benchmarks, sourced from certified manufacturers.</p>
+        </div>
+      </li>
+      <li class="why-item reveal" data-reveal style="--delay:80ms">
+        <span class="why-item__check"><svg class="icon icon--sm"><use href="#icon-check"/></svg></span>
+        <div>
+          <span class="why-item__num">02</span>
+          <h4 class="why-item__title">Competitive &amp; Transparent Pricing</h4>
+          <p class="why-item__text">No hidden costs — clear, itemized quotations that reflect genuine market value.</p>
+        </div>
+      </li>
+      <li class="why-item reveal" data-reveal style="--delay:160ms">
+        <span class="why-item__check"><svg class="icon icon--sm"><use href="#icon-check"/></svg></span>
+        <div>
+          <span class="why-item__num">03</span>
+          <h4 class="why-item__title">Genuine Branded Items</h4>
+          <p class="why-item__text">Strict anti-counterfeit sourcing. Every branded product comes with authentic certification.</p>
+        </div>
+      </li>
+      <li class="why-item reveal" data-reveal style="--delay:240ms">
+        <span class="why-item__check"><svg class="icon icon--sm"><use href="#icon-check"/></svg></span>
+        <div>
+          <span class="why-item__num">04</span>
+          <h4 class="why-item__title">Timely Delivery &amp; Efficient Logistics</h4>
+          <p class="why-item__text">A logistics network built for reliable delivery, on schedule, every time.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= COMMITMENT ================= -->
+<section class="section section--navy section--commitment">
+  <div class="container commitment reveal" data-reveal>
+    <div class="eyebrow eyebrow--center"><span class="eyebrow__line"></span>Our Commitment<span class="eyebrow__line"></span></div>
+    <h2 class="commitment__quote">&ldquo;Built on trust, quality and consistency.&rdquo;</h2>
+    <div class="commitment__values">
+      <span>Integrity</span><i></i><span>Quality</span><i></i><span>Reliability</span><i></i><span>Excellence</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA / CONTACT ================= -->
+<section class="section section--cta" id="contact">
+  <div class="container cta reveal" data-reveal>
+    <div class="eyebrow eyebrow--center"><span class="eyebrow__line"></span>Ready to Begin?<span class="eyebrow__line"></span></div>
+    <h2 class="cta__title">Let Us Build Your <span class="text-gold">Supply Solution</span></h2>
+    <p class="cta__text">Contact our team today to discuss your requirement — no commitment required.</p>
+    <div class="cta__actions">
+      <button class="btn btn--gold btn--lg" data-open-modal data-service="">Get a Proposal <svg class="icon"><use href="#icon-arrow-right"/></svg></button>
+      <a class="btn btn--glass btn--lg" href="https://wa.me/923215797119?text=Welcome%20to%20AXION%20Global%20Supply%20and%20Procurement%20Solutions.%20How%20may%20our%20team%20assist%20you%3F" target="_blank" rel="noreferrer">
+        <svg class="icon"><use href="#icon-whatsapp"/></svg> Chat With Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+
+  <div class="site-footer__glow site-footer__glow--one"></div>
+  <div class="site-footer__glow site-footer__glow--two"></div>
+
+  <div class="container">
+
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+
+        <a href="index.html#home" class="footer-logo">
+          AXION <span>GLOBAL</span>
+        </a>
+
+        <p class="footer-tagline">
+          Global Supply &amp; Solutions
+        </p>
+
+        <p class="footer-description">
+          Reliable procurement, specialized XRD analysis,
+          construction materials and complete interior
+          solutions delivered with precision and trust.
+        </p>
+
+        <div class="footer-accent-line"></div>
+
+      </div>
+
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Products &amp; Services</a></li>
+          <li><a href="xrd-services.html">Raw Material Analysis and Quality Control</a></li>
+          <li><a href="construction-interiors.html">Construction &amp; Interiors</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Contact -->
+      <div class="footer-column footer-contact">
+
+        <h4>Contact Us</h4>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">⌖</span>
+          <p>
+            Plot #4, Street 2 Adjacent to<br>
+            Shahi Qila Marriage Hall,<br>
+            Tehsil Taxila, District Rawalpindi
+          </p>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">☎</span>
+          <a href="tel:+923215797119">
+            +92 321 5797119
+          </a>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉</span>
+          <a href="mailto:Info.axionglobalpk@gmail.com">
+            Info.axionglobalpk@gmail.com
+          </a>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">◎</span>
+          <a href="https://www.axionglobal-pk.com" target="_blank" rel="noopener">
+            www.axionglobal-pk.com
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-divider"></div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 AXION GLOBAL. All rights reserved.
+      </p>
+
+      <div class="footer-bottom__links">
+        <a href="#">Privacy Policy</a>
+        <span>•</span>
+        <a href="#">Terms &amp; Conditions</a>
+        <span>•</span>
+        <a href="admin/login.php" rel="nofollow">Admin</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+<a class="wa-float" href="https://wa.me/923215797119?text=Welcome%20to%20AXION%20Global%20Supply%20and%20Procurement%20Solutions.%20How%20may%20our%20team%20assist%20you%3F" target="_blank" rel="noreferrer" aria-label="Chat with AXION Global on WhatsApp">
+  <span class="wa-float__tooltip">Chat with us on WhatsApp</span>
+  <span class="wa-float__ring"></span>
+  <span class="wa-float__pulse"></span>
+  <svg class="icon"><use href="#icon-whatsapp"/></svg>
+</a>
+
+<!-- ================= INQUIRY MODAL ================= -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+    <div class="modal__bg">
+      <img id="modalBgImg" src="" alt="" />
+      <div class="modal__bg-scrim"></div>
+    </div>
+
+    <div class="modal__glass">
+
+      <div class="modal__head">
+        <div>
+          <div class="modal__tag" id="modalTag">General Inquiry</div>
+          <h3 class="modal__title" id="modalTitle">Submit Your Query</h3>
+        </div>
+        <button class="modal__close" data-close-modal aria-label="Close">
+          <svg class="icon"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+
+      <form class="modal__form" id="inquiryForm">
+        <div class="form-grid">
+
+          <input type="hidden" name="service" id="modalServiceField" />
+
+          <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label>Do not fill this in
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Full Name<span class="req">*</span></span>
+            <input type="text" name="name" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Company / Organization</span>
+            <input type="text" name="company" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Email Address<span class="req">*</span></span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Phone / WhatsApp<span class="req">*</span></span>
+            <input type="text" name="phone" required />
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label">Your Requirement<span class="req">*</span></span>
+            <textarea name="message" rows="3" required></textarea>
+          </label>
+
+        </div>
+
+        <p class="form-error" id="formError" hidden>
+          Please fill in all required fields before submitting.
+        </p>
+
+        <button type="submit" class="btn btn--gold-solid btn--full">
+          Send Inquiry
+          <svg class="icon"><use href="#icon-send"/></svg>
+        </button>
+
+        <p class="form-note">
+          Your information will be used only to respond to your inquiry.
+        </p>
+      </form>
+
+      <div class="modal__success" id="modalSuccess" hidden>
+        <div class="modal__success-icon"><svg class="icon icon--lg"><use href="#icon-check"/></svg></div>
+        <h4>Thank you for contacting AXION Global.</h4>
+        <p>Your inquiry has been received. Our team will review your requirement and get back to you shortly.</p>
+        <a class="btn btn--white" href="https://wa.me/923215797119" target="_blank" rel="noreferrer">
+          <svg class="icon"><use href="#icon-whatsapp"/></svg> Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
