@@ -12,7 +12,15 @@
 # =========================================================
 
 # The site's front page is home.html, not index.html.
-DirectoryIndex home.html
+#
+# The rest of the list matters: DirectoryIndex applies to EVERY
+# directory, not just the root, so naming only home.html here left
+# /admin/ with no index at all and Apache fell back to listing the
+# folder's contents.
+DirectoryIndex home.html index.php index.html
+
+# Never list a directory's contents when it has no index page.
+Options -Indexes
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
