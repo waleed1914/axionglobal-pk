@@ -444,3 +444,52 @@
   .solution-panel::before { transform: scaleX(1); }
   .solution-panel { border-color: rgba(199,154,61,.28); }
 }
+
+/* =========================================================
+   LEGAL PAGES (privacy.html, terms.html)
+   Long-form prose, so the column is narrowed to a
+   comfortable measure rather than the full container.
+   ========================================================= */
+
+.legal-header {
+  padding-block: clamp(90px, 12vw, 140px) clamp(40px, 6vw, 60px);
+}
+
+.legal-updated {
+  margin-top: 14px;
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: rgba(255, 255, 255, .55);
+}
+
+.legal {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.legal h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(20px, 2.4vw, 25px);
+  font-weight: 700;
+  color: var(--navy, #0B1B33);
+  margin: 42px 0 14px;
+}
+
+.legal h2:first-child {
+  margin-top: 0;
+}
+
+.legal .p {
+  margin-bottom: 16px;
+  max-width: none;
+}
+
+.legal a {
+  color: var(--gold-deep, #C79A3D);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal a:hover {
+  color: var(--navy, #0B1B33);
+}
