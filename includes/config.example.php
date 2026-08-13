@@ -39,12 +39,18 @@ const MAIL_REPLY_TO_CUSTOMER = true;
    Fill SMTP_PASS in on the server, not on your laptop.
 
    Common values:
-     cPanel / domain mailbox  → mail.axionglobal-pk.com : 587 : tls
+     Namecheap Private Email  → mail.privateemail.com : 587 : tls
+     cPanel / domain mailbox  → mail.<your-domain> : 587 : tls
      Amazon SES               → email-smtp.<region>.amazonaws.com : 587 : tls
      Gmail (App Password)     → smtp.gmail.com : 587 : tls
+
+   Use the provider's own hostname, not mail.<your-domain>, unless that
+   name actually resolves to the mail server. On Namecheap it does not —
+   it points at their web server and times out on every mail port. Check
+   the domain's MX records if you are unsure who hosts the mailbox.
    --------------------------------------------------------- */
 
-const SMTP_HOST = 'mail.axionglobal-pk.com';
+const SMTP_HOST = 'mail.privateemail.com';
 const SMTP_PORT = 587;
 const SMTP_SECURE = 'tls';          // 'tls' (STARTTLS, port 587) or 'ssl' (port 465)
 const SMTP_USER = 'info@axionglobal-pk.com';
@@ -59,6 +65,13 @@ function smtp_password(): string
     $env = getenv('AXION_SMTP_PASS');
     return ($env !== false && $env !== '') ? $env : SMTP_PASS_FALLBACK;
 }
+
+/* Seconds to wait on the mail server, for the connect and for each
+   reply after it. Two mails are sent per inquiry, so keep this well
+   under max_execution_time (30s by default) — otherwise a mail server
+   that is down takes the whole request with it instead of failing
+   cleanly and letting the visitor see their confirmation. */
+const SMTP_TIMEOUT = 8;
 
 
 /* ---------------------------------------------------------

@@ -16,12 +16,15 @@ require_once __DIR__ . '/smtp.php';
  */
 function mailer(): Smtp
 {
+    /* SMTP_TIMEOUT is optional — config.php predates it on installs that
+       were set up earlier, and that file is not in the repository. */
     return mailer_last(new Smtp(
         SMTP_HOST,
         SMTP_PORT,
         SMTP_SECURE,
         SMTP_USER,
-        smtp_password()
+        smtp_password(),
+        defined('SMTP_TIMEOUT') ? SMTP_TIMEOUT : 8
     ));
 }
 

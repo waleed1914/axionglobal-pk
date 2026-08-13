@@ -17,13 +17,17 @@ final class Smtp
     private $sock = null;
     private array $log = [];
 
+    /* The timeout applies to the connect and to every read that follows.
+       Two mails are sent per inquiry, so it must stay well under
+       max_execution_time (30s by default) — otherwise an unreachable
+       mail server kills the request instead of failing cleanly. */
     public function __construct(
         private string $host,
         private int $port,
         private string $secure,     // 'tls' | 'ssl' | ''
         private string $user,
         private string $pass,
-        private int $timeout = 20
+        private int $timeout = 8
     ) {}
 
     public function log(): array { return $this->log; }

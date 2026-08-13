@@ -137,6 +137,19 @@ $lead = compact('name', 'company', 'email', 'phone', 'service', 'message', 'page
 $status = ['customer' => 'pending', 'admin' => 'pending'];
 $errorText = [];
 
+/* Each send gets its own wall-clock budget rather than sharing one.
+   A slow mail server that trickles its replies could otherwise burn
+   through max_execution_time mid-send, and a fatal timeout here would
+   skip both the status update and the JSON reply below — leaving the
+   lead stored but the visitor told the inquiry failed. */
+$budget = static function (): void {
+    if (function_exists('set_time_limit')) {
+        @set_time_limit(30);
+    }
+};
+
+$budget();
+
 try {
     send_customer_ack($lead);
     $status['customer'] = 'sent';
@@ -146,6 +159,8 @@ try {
     $errorText[] = 'customer: ' . $detail;
     error_log('[axion] customer mail failed for lead ' . $leadId . ': ' . $detail);
 }
+
+$budget();
 
 try {
     send_admin_notification($lead);
