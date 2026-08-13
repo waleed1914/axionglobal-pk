@@ -24,6 +24,45 @@ function fail(int $status, string $message): never
     exit;
 }
 
+/**
+ * Sends the response and hangs up, so whatever runs afterwards costs
+ * the visitor nothing. Called once the lead is safely stored: waiting
+ * on a mail server that may be slow or unreachable is our problem, and
+ * making the thank-you screen sit there for it just looks broken.
+ */
+function respond_and_continue(string $body): void
+{
+    /* The visitor is free to close the tab; the mail still goes out. */
+    ignore_user_abort(true);
+
+    /* Compression would make the Content-Length below a lie, and the
+       browser would wait for bytes that never arrive. */
+    if (function_exists('apache_setenv')) {
+        @apache_setenv('no-gzip', '1');
+    }
+    @ini_set('zlib.output_compression', '0');
+
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+
+    ob_start();
+    echo $body;
+
+    /* Content-Length is what actually lets the browser stop waiting
+       under mod_php, which has no fastcgi_finish_request. */
+    header('Content-Length: ' . (string) ob_get_length());
+    header('Connection: close');
+
+    ob_end_flush();
+    flush();
+
+    /* php-fpm can hand the connection back properly. */
+    if (function_exists('fastcgi_finish_request')) {
+        fastcgi_finish_request();
+    }
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     fail(405, 'Method not allowed.');
 }
@@ -130,6 +169,15 @@ $lead = compact('name', 'company', 'email', 'phone', 'service', 'message', 'page
       + ['created_at' => $createdAt];
 
 /* ---------------------------------------------------------
+   Answer the visitor now
+
+   The inquiry is already safe in the database, so everything
+   below is bookkeeping we owe ourselves, not them.
+   --------------------------------------------------------- */
+
+respond_and_continue(json_encode(['ok' => true], JSON_UNESCAPED_UNICODE));
+
+/* ---------------------------------------------------------
    Send mail — failures are logged against the lead, not
    shown to the customer, because we already have their data
    --------------------------------------------------------- */
@@ -140,8 +188,8 @@ $errorText = [];
 /* Each send gets its own wall-clock budget rather than sharing one.
    A slow mail server that trickles its replies could otherwise burn
    through max_execution_time mid-send, and a fatal timeout here would
-   skip both the status update and the JSON reply below — leaving the
-   lead stored but the visitor told the inquiry failed. */
+   skip the status update below — leaving the lead stored but its
+   delivery state stuck at 'pending', which reads as "nothing tried". */
 $budget = static function (): void {
     if (function_exists('set_time_limit')) {
         @set_time_limit(30);
@@ -184,4 +232,4 @@ try {
     error_log('[axion] mail-status update failed: ' . $e->getMessage());
 }
 
-echo json_encode(['ok' => true], JSON_UNESCAPED_UNICODE);
+/* No response here — respond_and_continue() already sent it. */
