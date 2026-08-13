@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="AXION Global">
+  <title>AXION Global</title>
+
+  <!--
+    Simplified mark for small sizes. The full badge (logo.svg) carries the
+    globe, orbit arcs and sparkle; below about 64px those collapse into
+    noise, so this keeps only what still reads at 16px: the gold frame,
+    the navy field and the two-tone A.
+  -->
+
+  <defs>
+    <linearGradient id="fgold" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"    stop-color="#9A7522"/>
+      <stop offset="0.25" stop-color="#F0CE6C"/>
+      <stop offset="0.50" stop-color="#D3A438"/>
+      <stop offset="0.78" stop-color="#F7E29E"/>
+      <stop offset="1"    stop-color="#8A6A1F"/>
+    </linearGradient>
+
+    <linearGradient id="fbar" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0"    stop-color="#C9992C"/>
+      <stop offset="0.40" stop-color="#F7DE96"/>
+      <stop offset="1"    stop-color="#B88C26"/>
+    </linearGradient>
+
+    <linearGradient id="fsilver" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0"    stop-color="#9AA6B2"/>
+      <stop offset="0.38" stop-color="#FFFFFF"/>
+      <stop offset="1"    stop-color="#AAB5C0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="496" height="496" rx="116" fill="url(#fgold)"/>
+  <rect x="36" y="36" width="440" height="440" rx="92" fill="#0E2748"/>
+
+  <!-- Gold right leg -->
+  <path d="M250 96 L326 96 L452 432 L360 432 Z" fill="url(#fbar)"/>
+
+  <!-- Left silver blade -->
+  <path d="M242 96 L190 104 L60 432 L164 432 C 156 344, 180 214, 242 96 Z" fill="url(#fsilver)"/>
+
+  <!-- Inner silver bar -->
+  <path d="M288 228 L318 228 L396 432 L348 432 Z" fill="url(#fsilver)"/>
+</svg>

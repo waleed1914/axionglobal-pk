@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="AXION Global">
+  <title>AXION Global</title>
+
+  <defs>
+    <linearGradient id="gold" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"    stop-color="#7E5F1B"/>
+      <stop offset="0.14" stop-color="#E7C05A"/>
+      <stop offset="0.30" stop-color="#FCEDB6"/>
+      <stop offset="0.50" stop-color="#CFA036"/>
+      <stop offset="0.70" stop-color="#F7E09A"/>
+      <stop offset="0.88" stop-color="#C49A33"/>
+      <stop offset="1"    stop-color="#7E5F1B"/>
+    </linearGradient>
+
+    <linearGradient id="goldBar" x1="0" y1="0.1" x2="1" y2="0.6">
+      <stop offset="0"    stop-color="#A87C22"/>
+      <stop offset="0.22" stop-color="#F3D688"/>
+      <stop offset="0.46" stop-color="#E0B349"/>
+      <stop offset="0.70" stop-color="#F8E4A4"/>
+      <stop offset="1"    stop-color="#96731F"/>
+    </linearGradient>
+
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="0.55">
+      <stop offset="0"    stop-color="#6F7C89"/>
+      <stop offset="0.20" stop-color="#F2F6F9"/>
+      <stop offset="0.44" stop-color="#AEB9C4"/>
+      <stop offset="0.68" stop-color="#F6F9FB"/>
+      <stop offset="0.88" stop-color="#9AA6B2"/>
+      <stop offset="1"    stop-color="#6F7C89"/>
+    </linearGradient>
+
+    <linearGradient id="silverBar" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0"    stop-color="#8A97A3"/>
+      <stop offset="0.30" stop-color="#F5F8FA"/>
+      <stop offset="0.62" stop-color="#B7C1CB"/>
+      <stop offset="1"    stop-color="#7F8C99"/>
+    </linearGradient>
+
+    <radialGradient id="panel" cx="0.5" cy="0.34" r="0.80">
+      <stop offset="0"    stop-color="#20447A"/>
+      <stop offset="0.50" stop-color="#123056"/>
+      <stop offset="1"    stop-color="#07152A"/>
+    </radialGradient>
+
+    <radialGradient id="globeFill" cx="0.34" cy="0.30" r="0.88">
+      <stop offset="0"    stop-color="#3D93E0"/>
+      <stop offset="0.40" stop-color="#1259A6"/>
+      <stop offset="0.82" stop-color="#08356B"/>
+      <stop offset="1"    stop-color="#041F42"/>
+    </radialGradient>
+
+    <clipPath id="globeClip">
+      <circle cx="232" cy="348" r="62"/>
+    </clipPath>
+  </defs>
+
+  <!-- Badge -->
+  <rect x="26" y="26" width="460" height="460" rx="118" fill="url(#gold)"/>
+  <rect x="47" y="47" width="418" height="418" rx="100" fill="#091A31"/>
+  <rect x="53" y="53" width="406" height="406" rx="95" fill="url(#panel)"/>
+
+  <!-- Orbit arcs -->
+  <g fill="none" stroke="#C79A3D">
+    <ellipse cx="256" cy="244" rx="192" ry="112" transform="rotate(-13 256 244)" stroke-width="2" stroke-opacity="0.36"/>
+    <ellipse cx="256" cy="268" rx="168" ry="146" transform="rotate(-13 256 268)" stroke-width="1.3" stroke-opacity="0.16"/>
+  </g>
+
+  <!-- Sparkle -->
+  <g fill="#FFF6D8">
+    <path d="M378 92 L381 112 L401 115 L381 118 L378 138 L375 118 L355 115 L375 112 Z" opacity="0.9"/>
+    <circle cx="378" cy="115" r="3.4"/>
+  </g>
+
+  <!-- Gold right leg -->
+  <path d="M256 110 L322 110 L438 408 L354 408 Z" fill="url(#goldBar)"/>
+  <path d="M256 110 L322 110 L438 408 L422 408 L282 110 Z" fill="#FFF2C4" opacity="0.26"/>
+  <path d="M354 408 L438 408 L432 392 L350 392 Z" fill="#6E5316" opacity="0.35"/>
+
+  <!-- Inner silver bar -->
+  <path d="M292 232 L318 232 L388 408 L346 408 Z" fill="url(#silverBar)"/>
+  <path d="M292 232 L318 232 L388 408 L376 408 L302 232 Z" fill="#FFFFFF" opacity="0.22"/>
+
+  <!-- Left silver blade: straight outer edge, concave inner sweep -->
+  <path d="M248 108
+           L196 116
+           L84 408
+           L176 408
+           C 168 332, 190 214, 248 108 Z" fill="url(#silver)"/>
+  <path d="M248 108 L196 116 L84 408 L112 408 L224 118 Z" fill="#FFFFFF" opacity="0.28"/>
+  <path d="M84 408 L176 408 L174 394 L90 394 Z" fill="#5D6874" opacity="0.35"/>
+
+  <!-- Globe -->
+  <circle cx="232" cy="348" r="62" fill="url(#globeFill)"/>
+
+  <g clip-path="url(#globeClip)" fill="#DFE8EF" fill-opacity="0.92">
+    <!-- Americas: broad north, narrow isthmus, tapering south -->
+    <path d="M192 298
+             c 20 -10 40 -4 44 8
+             c 3 10 -8 15 -17 17
+             c -7 1 -11 7 -8 13
+             c 3 7 11 11 9 21
+             c -3 16 -11 33 -20 41
+             c -8 7 -16 2 -16 -11
+             c 0 -17 5 -35 2 -47
+             c -3 -11 -13 -13 -15 -23
+             c -2 -10 3 -15 21 -19 Z"/>
+    <!-- Europe + Africa -->
+    <path d="M252 300
+             c 15 -7 31 -3 35 7
+             c 4 10 -7 14 -15 14
+             c -5 0 -8 3 -6 7
+             c 5 9 15 11 19 22
+             c 6 15 -1 35 -11 44
+             c -9 8 -19 5 -21 -8
+             c -2 -15 2 -30 -3 -42
+             c -5 -12 -14 -17 -13 -27
+             c 1 -8 7 -13 15 -17 Z"/>
+    <!-- Asia -->
+    <path d="M290 290
+             c 18 -7 34 -2 37 9
+             c 3 11 -6 17 -17 16
+             c -13 -1 -27 -10 -20 -25 Z"/>
+    <!-- Australia -->
+    <path d="M296 372 c 11 -4 20 2 20 11 c 0 9 -8 14 -16 11 c -9 -3 -12 -18 -4 -22 Z"/>
+  </g>
+
+  <g clip-path="url(#globeClip)" fill="none" stroke="#E4C878" stroke-opacity="0.26" stroke-width="1">
+    <ellipse cx="232" cy="348" rx="30" ry="62"/>
+    <path d="M170 322 H294 M170 348 H294 M170 374 H294"/>
+  </g>
+
+  <!-- Terminator shading -->
+  <circle cx="232" cy="348" r="62" fill="url(#globeFill)" opacity="0"/>
+  <circle cx="232" cy="348" r="62" fill="none" stroke="#F0DCA0" stroke-opacity="0.75" stroke-width="2.2"/>
+
+  <!-- Base sheen -->
+  <ellipse cx="256" cy="418" rx="152" ry="8" fill="#E4C878" opacity="0.20"/>
+</svg>
