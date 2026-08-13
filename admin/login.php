@@ -68,7 +68,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     </form>
 
     <p class="note">
-      <a href="../index.html" style="color:#8A8F99;">&larr; Back to website</a>
+      <a href="/home" style="color:#8A8F99;">&larr; Back to website</a>
     </p>
 
   </div>

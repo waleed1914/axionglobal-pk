@@ -38,7 +38,7 @@ sudo systemctl restart apache2
 Put the whole folder in the web root (`/var/www/html` on Apache).
 
 ```
-index.html
+home.html                     ← served at / and /home
 xrd-services.html
 construction-interiors.html
 src_style.css
@@ -93,6 +93,44 @@ curl -i https://www.axionglobal-pk.com/storage/leads.sqlite
 ```
 
 If either returns content, stop and fix it before going live.
+
+---
+
+## 3b. Clean URLs
+
+Pages are linked without their extension — `/home`, `/xrd-services`,
+`/privacy`. The root `.htaccess` maps those to the `.html` files, sets
+`home.html` as the front page, and 301s any `.html` address to its clean
+form so each page has one canonical URL.
+
+**Apache** — needs `mod_rewrite` and the same `AllowOverride All` as
+above. Ubuntu ships `AllowOverride None` for `/var/www/`, which makes
+every `.htaccess` in this project inert:
+
+```bash
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+```
+
+**Nginx** — `.htaccess` does nothing. Use:
+
+```nginx
+index home.html;
+
+location / {
+    try_files $uri $uri.html $uri/ =404;
+}
+```
+
+**Verify** — the first must be 200, the second a 301 to `/home`:
+
+```bash
+curl -o /dev/null -w '%{http_code}\n'                 https://www.axionglobal-pk.com/home
+curl -o /dev/null -w '%{http_code} %{redirect_url}\n' https://www.axionglobal-pk.com/home.html
+```
+
+If `/home` returns 404, `mod_rewrite` or `AllowOverride` is missing —
+every internal link on the site depends on it.
 
 ---
 

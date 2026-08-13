@@ -1,0 +1,47 @@
+# =========================================================
+# AXION GLOBAL — URLs
+#
+# Pages are linked without their .html extension: /home,
+# /xrd-services, /privacy and so on. This file is what makes
+# those addresses resolve to the real files on disk.
+#
+# NOTE: Apache ignores .htaccess unless the directory is
+# configured with AllowOverride All. Ubuntu ships
+# AllowOverride None for /var/www/, so this file does nothing
+# until that is changed — see DEPLOY.md.
+# =========================================================
+
+# The site's front page is home.html, not index.html.
+DirectoryIndex home.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ---- Canonical: one address per page -------------------
+  #
+  # Someone arriving at /home.html is sent to /home. Matching
+  # on THE_REQUEST means only real client requests trigger
+  # this — the internal rewrite below cannot loop back into it.
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]*?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # The old front page keeps working for anyone who bookmarked
+  # it or for search results that still point at it.
+  RewriteRule ^index\.html?$ /home [R=301,L]
+
+  # ---- Serve extensionless URLs from the .html files ------
+  #
+  # Only when nothing real matches the request, so existing
+  # files and directories are always served as themselves.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
+</IfModule>
+
+# Without mod_rewrite the site still works, but only at the
+# .html addresses — every internal link would 404. Fail loudly
+# in the log rather than quietly serving a broken site.
+<IfModule !mod_rewrite.c>
+  # Requires mod_rewrite: a2enmod rewrite && systemctl restart apache2
+</IfModule>

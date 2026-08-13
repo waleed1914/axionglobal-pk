@@ -11,7 +11,7 @@ for the sales team.
 ## Layout
 
 ```
-index.html                    Home
+home.html                     Home (served at / and /home)
 xrd-services.html             Raw material analysis & quality control
 construction-interiors.html   Construction materials & interiors
 

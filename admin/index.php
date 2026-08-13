@@ -39,7 +39,7 @@ function page_url(int $n, string $search): string
 <div class="topbar">
   <div class="topbar__brand">AXION <span>GLOBAL</span> &nbsp;Admin</div>
   <div class="topbar__right">
-    <a class="topbar__link" href="../index.html" target="_blank" rel="noopener">View website</a>
+    <a class="topbar__link" href="/home" target="_blank" rel="noopener">View website</a>
     <a class="topbar__link" href="logout.php">Sign out</a>
   </div>
 </div>

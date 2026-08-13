@@ -84,7 +84,7 @@
 
 
   /* -------------------------------------------------------
-     4. Card tilt (index.html spec cards / featured media)
+     4. Card tilt (home page spec cards / featured media)
      ------------------------------------------------------- */
 
   if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
@@ -224,7 +224,9 @@
 
         var payload = {};
         new FormData(form).forEach(function (value, key) { payload[key] = value; });
-        payload.page = location.pathname.split("/").pop() || "index.html";
+        /* Pages are served without an extension, so this is "home",
+           "xrd-services" and so on. The fallback covers "/" itself. */
+        payload.page = location.pathname.split("/").pop() || "home";
 
         if (submitBtn) {
           submitBtn.disabled = true;
@@ -237,7 +239,10 @@
           submitBtn.innerHTML = submitText;
         };
 
-        fetch("api/submit-inquiry.php", {
+        /* Rooted, not relative: extensionless URLs have no trailing
+           slash, so a relative path would resolve differently
+           depending on how the visitor arrived at the page. */
+        fetch("/api/submit-inquiry.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
