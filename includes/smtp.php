@@ -38,9 +38,11 @@ final class Smtp
             throw new SmtpException('No recipients given.');
         }
 
-        $this->connect();
-
+        /* connect() inside the try: authentication can fail after the
+           socket is already open, and that socket must still be closed. */
         try {
+            $this->connect();
+
             $this->cmd('MAIL FROM:<' . $from[0] . '>', [250]);
 
             foreach ($to as $rcpt) {

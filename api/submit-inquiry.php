@@ -142,8 +142,9 @@ try {
     $status['customer'] = 'sent';
 } catch (Throwable $e) {
     $status['customer'] = 'failed';
-    $errorText[] = 'customer: ' . $e->getMessage();
-    error_log('[axion] customer mail failed for lead ' . $leadId . ': ' . $e->getMessage());
+    $detail = $e->getMessage() . mailer_transcript();
+    $errorText[] = 'customer: ' . $detail;
+    error_log('[axion] customer mail failed for lead ' . $leadId . ': ' . $detail);
 }
 
 try {
@@ -151,8 +152,9 @@ try {
     $status['admin'] = 'sent';
 } catch (Throwable $e) {
     $status['admin'] = 'failed';
-    $errorText[] = 'admin: ' . $e->getMessage();
-    error_log('[axion] admin mail failed for lead ' . $leadId . ': ' . $e->getMessage());
+    $detail = $e->getMessage() . mailer_transcript();
+    $errorText[] = 'admin: ' . $detail;
+    error_log('[axion] admin mail failed for lead ' . $leadId . ': ' . $detail);
 }
 
 try {

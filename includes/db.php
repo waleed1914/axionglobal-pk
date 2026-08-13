@@ -71,7 +71,11 @@ function migrate(PDO $pdo, bool $isSqlite): void
         )
     ");
 
-    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_leads_created ON leads (created_at)");
+    /* MySQL has no "CREATE INDEX IF NOT EXISTS" — it is a syntax error
+       there, and would abort every request once the DSN is switched to
+       MySQL. The index is an optimisation, not a correctness
+       requirement, so a failure to create it is not fatal. */
+    create_index_quietly($pdo, "CREATE INDEX idx_leads_created ON leads (created_at)", $isSqlite);
 
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS settings (
@@ -88,7 +92,26 @@ function migrate(PDO $pdo, bool $isSqlite): void
         )
     ");
 
-    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_attempts_ip ON login_attempts (ip, created_at)");
+    create_index_quietly($pdo, "CREATE INDEX idx_attempts_ip ON login_attempts (ip, created_at)", $isSqlite);
+}
+
+/**
+ * SQLite supports IF NOT EXISTS on indexes; MySQL does not. Use it where
+ * available, and swallow "already exists" everywhere else.
+ */
+function create_index_quietly(PDO $pdo, string $sql, bool $isSqlite): void
+{
+    if ($isSqlite) {
+        $sql = preg_replace('/^CREATE INDEX /i', 'CREATE INDEX IF NOT EXISTS ', $sql) ?? $sql;
+    }
+
+    try {
+        $pdo->exec($sql);
+    } catch (PDOException $e) {
+        /* 42000/1061 = duplicate key name on MySQL. Anything else is
+           still only a missing index, so never break the request. */
+        error_log('[axion] index skipped: ' . $e->getMessage());
+    }
 }
 
 function setting_get(string $key): ?string

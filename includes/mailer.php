@@ -10,15 +10,49 @@ declare(strict_types=1);
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/smtp.php';
 
+/**
+ * Builds an SMTP client and remembers it, so that when a send throws we
+ * can still read the server conversation that led to the failure.
+ */
 function mailer(): Smtp
 {
-    return new Smtp(
+    return mailer_last(new Smtp(
         SMTP_HOST,
         SMTP_PORT,
         SMTP_SECURE,
         SMTP_USER,
         smtp_password()
-    );
+    ));
+}
+
+/** Get, or set-and-get, the most recently used client. */
+function mailer_last(?Smtp $set = null): ?Smtp
+{
+    static $last = null;
+
+    if ($set !== null) {
+        $last = $set;
+    }
+
+    return $last;
+}
+
+/**
+ * The tail of the last SMTP conversation, for diagnosing a failed send —
+ * the exception message alone rarely says why. Only server replies and
+ * our own verbs are recorded; the password is never logged.
+ */
+function mailer_transcript(): string
+{
+    $client = mailer_last();
+
+    if ($client === null) {
+        return '';
+    }
+
+    $log = $client->log();
+
+    return $log === [] ? '' : ' [SMTP: ' . implode(' / ', array_slice($log, -5)) . ']';
 }
 
 function e(string $s): string
